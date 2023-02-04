@@ -312,7 +312,7 @@
 	name = "Dexalin"
 	id = "dexalin"
 	result = /singleton/reagent/dexalin
-	required_reagents = list(/singleton/reagent/acetone = 2, /singleton/reagent/toxin/phoron = 0.1)
+	required_reagents = list(/singleton/reagent/acetone = 2, /singleton/reagent/toxin/phoron/pure = 0.1)
 	catalysts = list(/singleton/reagent/toxin/phoron/pure = 1)
 	inhibitors = list(/singleton/reagent/water = 1) // Messes with cryox
 	result_amount = 1
@@ -614,11 +614,18 @@
 	required_reagents = list(/singleton/reagent/platinum = 1, /singleton/reagent/carbon = 1, /singleton/reagent/sterilizine = 1)
 	result_amount = 3
 
-/datum/chemical_reaction/cardox_removal
-	name = "Cardox Removal"
-	id = "cardox_removal"
+/datum/chemical_reaction/cardox_removal_pure
+	name = "Cardox Removal (pure phoron)"
+	id = "cardox_removal_pure"
 	result = /singleton/reagent/carbon
-	required_reagents = list(/singleton/reagent/toxin/cardox = 0.1, /singleton/reagent/toxin/phoron = 1)
+	required_reagents = list(/singleton/reagent/toxin/cardox = 0.1, /singleton/reagent/toxin/phoron/pure = 1)
+	result_amount = 0
+
+/datum/chemical_reaction/cardox_removal_kois
+	name = "Cardox Removal (kois phoron)"
+	id = "cardox_removal_kois"
+	result = /singleton/reagent/carbon
+	required_reagents = list(/singleton/reagent/toxin/cardox = 0.1, /singleton/reagent/toxin/phoron/kois = 1)
 	result_amount = 0
 
 /datum/chemical_reaction/monoammoniumphosphate
@@ -1143,7 +1150,7 @@
 	name = "Slime Crit"
 	id = "m_tele"
 	result = null
-	required_reagents = list(/singleton/reagent/toxin/phoron = 10)
+	required_reagents = list(/singleton/reagent/toxin/phoron/pure = 10)
 	result_amount = 1
 	required = /obj/item/slime_extract/gold
 
@@ -1333,7 +1340,7 @@
 	name = "Slime Powercell"
 	id = "m_cell"
 	result = null
-	required_reagents = list(/singleton/reagent/toxin/phoron = 1)
+	required_reagents = list(/singleton/reagent/toxin/phoron/pure = 1)
 	result_amount = 1
 	required = /obj/item/slime_extract/yellow
 	mix_message = "A small sparking part of the extract core falls onto the floor."
@@ -2799,12 +2806,19 @@
 	result_amount = 3
 	required_reagents = list(/singleton/reagent/drink/tonic = 1, /singleton/reagent/drink/sodawater = 1, /singleton/reagent/drink/toothpaste = 1)
 
-/datum/chemical_reaction/drink/sedantian_firestorm
-	name = "Sedantian Firestorm"
-	id = "sedantian_firestorm"
+/datum/chemical_reaction/drink/sedantian_firestorm_pure
+	name = "Sedantian Firestorm (pure phoron)"
+	id = "sedantian_firestorm_pure"
 	result = /singleton/reagent/drink/toothpaste/sedantian_firestorm
 	result_amount = 2
-	required_reagents = list(/singleton/reagent/toxin/phoron = 1, /singleton/reagent/drink/toothpaste = 1)
+	required_reagents = list(/singleton/reagent/toxin/phoron/pure = 1, /singleton/reagent/drink/toothpaste = 1)
+
+/datum/chemical_reaction/drink/sedantian_firestorm_kois
+	name = "Sedantian Firestorm (kois phoron)"
+	id = "sedantian_firestorm_kois"
+	result = /singleton/reagent/drink/toothpaste/sedantian_firestorm
+	result_amount = 2
+	required_reagents = list(/singleton/reagent/toxin/phoron/kois = 1, /singleton/reagent/drink/toothpaste = 1)
 
 /datum/chemical_reaction/drink/kois_odyne
 	name = "Kois Odyne"
