@@ -84,7 +84,7 @@
 
 /singleton/reagent/toxin/phoron
 	name = "Phoron"
-	description = "Phoron in its liquid form. Twice as potent when breathed in."
+	description = "Phoron in its liquid form. Twice as potent when breathed in. This form shouldn't exist - make a bug report!"
 	reagent_state = LIQUID
 	color = "#9D14DB"
 	strength = 30
@@ -161,12 +161,20 @@
 /singleton/reagent/toxin/phoron/kois
 	name = "Phoron"
 	description = "Phoron in its liquid form. Twice as potent when breathed in. Contains biological traces."
+	strength = 30
+	touch_met = 5
+	taste_mult = 1.5
+	breathe_mul = 2
 	fallback_specific_heat = 0.75 //contaminated phoron acts more like k'ois than phoron
 	var/kois_type = 1
 
 /singleton/reagent/toxin/phoron/kois/black
 	name = "Phoron"
 	description = "Phoron in its liquid form. Twice as potent when breathed in. Contains exotic biological traces."
+	strength = 10
+	touch_met = 5
+	taste_mult = 1.5
+	breathe_mul = 2
 	fallback_specific_heat = 0.5 //same as black k'ois
 	kois_type = 2
 
